@@ -15,4 +15,18 @@ body {
   color: var(--default-color);
   font-size: 1.6rem;
   font-family: var(--default-font);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }

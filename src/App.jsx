@@ -1,8 +1,11 @@
 import './App.css';
+import { MainContent } from './components/main-content.jsx';
 
 function App() {
   return (
-    <div className='app'></div>
+    <div className='app'>
+      <MainContent />
+    </div>
   )
 }
 
