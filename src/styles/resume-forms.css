@@ -1,0 +1,7 @@
+/* resume-forms is a flex child of main-content*/
+.resume-forms {
+  flex: 1;
+  max-width: calc(100% - 90rem);
+  max-height: 100vh;
+  overflow-y: auto;
+}

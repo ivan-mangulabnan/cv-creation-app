@@ -4,17 +4,3 @@
 
   display: flex;
 }
-
-.content-generator {
-  flex: 1;
-  max-width: calc(100% - 90rem);
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
-.display {
-  flex: 1;
-  max-width: 90rem;
-  max-height: 100vh;
-  overflow-y: auto;
-}

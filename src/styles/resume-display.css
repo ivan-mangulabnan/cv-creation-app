@@ -1,0 +1,7 @@
+/* resume-display is a flex child of main-content */
+.resume-display {
+  flex: 1;
+  max-width: 90rem;
+  max-height: 100vh;
+  overflow-y: auto;
+}
