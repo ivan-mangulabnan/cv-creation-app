@@ -1,6 +1,6 @@
 import '../styles/main-contents.css';
-import { ResumeForms } from './resume-display.jsx';
-import { ResumeDisplay } from './resume-forms.jsx';
+import { ResumeForms } from './resume-forms.jsx';
+import { ResumeDisplay } from './resume-display.jsx';
 
 export function MainContent () {
   return (

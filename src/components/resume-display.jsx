@@ -1,7 +1,7 @@
-import '../styles/resume-forms.css';
+import '../styles/resume-display.css';
 
-export function ResumeForms () {
+export function ResumeDisplay () {
   return (
-    <div className="resume-forms"></div>
+    <div className="resume-display"></div>
   )
 }
