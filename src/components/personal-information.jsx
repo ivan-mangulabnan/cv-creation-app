@@ -1,15 +1,15 @@
 const categories = [
-  { id: 'fullname', label: 'Full Name' },
-  { id: 'occupation', label: 'Occupation' },
-  { id: 'address', label: 'Address' },
-  { id: 'phone-number', label: 'Phone Number' },
-  { id: 'email', label: 'Email' },
+  { id: 'fullname', label: 'FULL NAME' },
+  { id: 'occupation', label: 'OCCUPATION' },
+  { id: 'address', label: 'ADDRESS' },
+  { id: 'phone-number', label: 'PHONE NUMBER' },
+  { id: 'email', label: 'EMAIL' },
 ]
 
 export function PersonalInformation ({ formData, onChange }) {
   function categoriesList () {
     return categories.map(category => <label key={category.id} htmlFor={category.id}>
-      {category.label}
+      <span>{category.label}</span>
       <input id={category.id} type="text" value={formData[category.id] || ''} onChange={e => onChange(category.id, e.target.value)} />
     </label>)
   }
