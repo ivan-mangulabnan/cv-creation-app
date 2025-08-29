@@ -4,15 +4,11 @@ import { ResumeDisplay } from './resume-display.jsx';
 import { useState } from 'react';
 
 export function MainContent () {
-  const [formData, setFormData] = useState({});
-
-  function handleChange (fieldName, value) {
-    setFormData(prev => ({...prev, [fieldName]: value}));
-  }
+  const [formData, setFormData] = useState({personalInfo: {}, education: {}, skills: {}, experience: {}, projects: {}});
 
   return (
     <div className="main-content">
-      <ResumeForms formData={formData} onChange={handleChange}/>
+      <ResumeForms formData={formData} setFormData={setFormData}/>
       <ResumeDisplay formData={formData}/>
     </div>
   )

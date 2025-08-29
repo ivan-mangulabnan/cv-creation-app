@@ -1,25 +1,53 @@
-const categories = [
-  { id: 'fullname', label: 'FULL NAME' },
-  { id: 'occupation', label: 'OCCUPATION' },
-  { id: 'address', label: 'ADDRESS' },
-  { id: 'phone-number', label: 'PHONE NUMBER' },
-  { id: 'email', label: 'EMAIL' },
-]
+import { Heading } from "./utils.jsx"
 
-export function PersonalInformation ({ formData, onChange }) {
-  function categoriesList () {
-    return categories.map(category => <label key={category.id} htmlFor={category.id}>
-      <span>{category.label}</span>
-      <input id={category.id} type="text" value={formData[category.id] || ''} onChange={e => onChange(category.id, e.target.value)} />
-    </label>)
+export function PersonalInformation ({formData, setFormData}) {
+  const title = 'Personal Information';
+  const sections = [
+    { id: 'fullname', label: 'Fullname', value: formData.personalInfo.fullname },
+    { id: 'occupation', label: 'Occupation', value: formData.personalInfo.occupation },
+  ];
+  const contacts = [
+    { id: 'address', label: 'Address', value: formData.personalInfo.contact?.address || '' },
+    { id: 'phoneNum', label: 'Phone Number', value: formData.personalInfo.contact?.phoneNum || '' },
+    { id: 'email', label: 'Email', value: formData.personalInfo.contact?.email || '' },
+  ];
+
+  console.log(formData.personalInfo);
+  return (
+    <div>
+      <Heading title={title}/>
+      <div>
+        { sections.map(section => <Sections key={section.id} id={section.id} label={section.label} value={section.value ? section.value : ''} setFormData={setFormData}/>)}
+        { contacts.map(contact => <Contacts key={contact.id} id={contact.id} label={contact.label} value={contact.value ? contact.value : ''} setFormData={setFormData}/>)}
+      </div>
+    </div>
+  )
+}
+
+function Sections ({id, label, value, setFormData}) {
+  const updateValue = (newValue) => {
+    setFormData(prev => ({ ...prev, personalInfo: { ...prev.personalInfo, [id]: newValue}}))
   }
 
   return (
-    <section>
-      <h2>Personal Information</h2>
-      <form id="personal-info-form">
-        { categoriesList() }
-      </form>
-    </section>
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} type="text" value={value} onChange={(e) => updateValue(e.target.value)} />
+    </div>
+  )
+}
+
+function Contacts ({id, label, value, setFormData}) {
+  const updateValue = (newValue) => {
+    setFormData(prev => {
+      return { ...prev, personalInfo: { ...prev.personalInfo, contact: { ...prev.personalInfo.contact, [id]: newValue}}};
+    })
+  }
+
+  return (
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} type="text" value={value} onChange={(e) => updateValue(e.target.value)} />
+    </div>
   )
 }

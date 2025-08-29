@@ -22,3 +22,9 @@ export const EmailSVG = (classname = "") => {
     </svg>
   )
 }
+
+export function Heading ({title}) {
+  return <div>
+    <h2>{title}</h2>
+  </div>
+}
