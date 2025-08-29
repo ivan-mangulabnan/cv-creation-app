@@ -28,3 +28,12 @@ export function Heading ({title}) {
     <h2>{title}</h2>
   </div>
 }
+
+export function LabelInput ({id, label, value, onChange}) {
+  return (
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} type="text" value={value} onChange={(e) => onChange(e.target.value)}/>
+    </div>
+  )
+}

@@ -12,7 +12,6 @@ export function PersonalInformation ({formData, setFormData}) {
     { id: 'email', label: 'Email', value: formData.personalInfo.contact?.email || '' },
   ];
 
-  console.log(formData.personalInfo);
   return (
     <div>
       <Heading title={title}/>

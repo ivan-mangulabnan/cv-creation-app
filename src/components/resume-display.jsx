@@ -5,7 +5,7 @@ export function ResumeDisplay ({formData}) {
   return (
     <div className="resume-display">
       <div className='sheet'>
-        <PersonalInformationSection formData={formData}/>
+        {/* <PersonalInformationSection formData={formData}/> */}
       </div>
     </div>
   )
