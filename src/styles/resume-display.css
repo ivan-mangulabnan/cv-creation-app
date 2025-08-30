@@ -15,25 +15,12 @@
   padding: 2rem 2rem;
 }
 
-.contacts-div {
+.contact-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
   padding: 0 2rem;
-}
-
-.contacts-div div p {
-  width: 100%;
-  min-width: 3rem;
-}
-
-.address-section,
-.email-section,
-.phone-section {
-  min-height: 1rem;
-  display: flex;
-  align-items: center;
-  gap: .4rem;
+  margin-top: 1.5rem;
 }
 
 .icon-svg {

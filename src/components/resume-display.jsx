@@ -5,38 +5,34 @@ export function ResumeDisplay ({formData}) {
   return (
     <div className="resume-display">
       <div className='sheet'>
-        {/* <PersonalInformationSection formData={formData}/> */}
+        <PersonalInfo personalInfo={formData.personalInfo}/>
       </div>
     </div>
   )
 }
 
-const PersonalInformationSection = ({formData}) => {
-  const sections = [
-    { wrapperClass: 'address-section', value: formData.address, svg: AddressSVG, svgClass: 'address-svg' },
-    { wrapperClass: 'phone-section', value: formData['phone-number'], svg: PhoneSVG, svgClass: 'phone-svg' },
-    { wrapperClass: 'email-section', value: formData.email, svg: EmailSVG, svgClass: 'email-svg' }
-  ];
+function PersonalInfo ({personalInfo}) {
+  const svgs = {
+    address: AddressSVG,
+    phoneNum: PhoneSVG,
+    email: EmailSVG
+  }
 
   return (
-    <section>
-      <h1>{formData.fullname}</h1>
-      <p>{formData.occupation}</p>
-      <div className='contacts-div'>
-        { sections
-          .filter(section => section.value?.trim())
-          .map(section => <ContactSection key={section.wrapperClass} wrapperClass={section.wrapperClass} value={section.value} Svg={section.svg} svgClass={section.svgClass}/>)
-        }
+    <div>
+      <h1>{personalInfo.fullname}</h1>
+      <p>{personalInfo.occupation}</p>
+      <div className='contact-list'>
+        { Object.entries(personalInfo.contact ?? {}).map(([key, value]) => {
+          const Icon = svgs[key];
+          return (
+            <div key={key} className='flex gap-point-5'>
+              { value !== '' && <Icon /> }
+              <span>{value}</span>
+            </div>
+          )
+        }) }
       </div>
-    </section>
-  )
-}
-
-function ContactSection ({wrapperClass, value, Svg, svgClass}) {
-  return (
-    <div className={`${wrapperClass}`}>
-      <Svg classname={svgClass}/>
-      <p>{value}</p>
     </div>
   )
 }
