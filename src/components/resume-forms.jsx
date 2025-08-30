@@ -2,6 +2,7 @@ import '../styles/resume-forms.css';
 import { PersonalInformation } from './personal-information.jsx';
 import { Education } from './educ.jsx';
 import { Skills } from './skills.jsx';
+import { Experience } from './exp.jsx';
 
 export function ResumeForms ({ formData, setFormData }) {
   return (
@@ -9,8 +10,8 @@ export function ResumeForms ({ formData, setFormData }) {
       <PersonalInformation formData={formData} setFormData={setFormData}/>
       <Education formData={formData} setFormData={setFormData}/>
       <Skills formData={formData} setFormData={setFormData}/>
-      {/* <Experience />
-      <Projects /> */}
+      <Experience formData={formData} setFormData={setFormData}/>
+      <Projects formData={formData} setFormData={setFormData}/>
     </div>
   )
 }
