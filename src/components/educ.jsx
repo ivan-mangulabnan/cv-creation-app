@@ -54,7 +54,7 @@ function StudySection ({study, updateForm, deleteStudy}) {
 
   return (
     <div>
-      { categories.map(category => <LabelInput key={category.id} id={category.id} label={category.label} value={study[category.id] ?? ''} onChange={curry(study.id, category.id)}/>) }
+      { categories.map(category => <LabelInput key={category.id} id={`${category.id}-${study.id}`} label={category.label} value={study[category.id] ?? ''} onChange={curry(study.id, category.id)}/>) }
       <button type="button" onClick={() => deleteStudy(study.id)}>Remove</button>
     </div>
   )
