@@ -6,6 +6,7 @@ export function ResumeDisplay ({formData}) {
     <div className="resume-display">
       <div className='sheet'>
         <PersonalInfo personalInfo={formData.personalInfo}/>
+        <Educ education={formData.education}/>
       </div>
     </div>
   )
@@ -33,6 +34,39 @@ function PersonalInfo ({personalInfo}) {
           )
         }) }
       </div>
+    </div>
+  )
+}
+
+function Educ ({education}) {
+  return (
+    <div className='margin-top-2'>
+      { education.studies?.length > 0 && (
+        <div>
+          <h2>EDUCATION</h2>
+          <hr className='bg-color-black' />
+          <div>
+            { education.studies.map(study => {
+              return (
+                <div key={study.id} className='margin-top-1 flex flex-space-between flex-align-center'>
+                  <div>
+                    <h3>
+                      {study.univ ? `${study.fos},` : study.fos}
+                      <span className={`span-univ ${study.dateFrom || study.dateTo ? 'display-block' : ''}`}><i>{` ${study.univ}`}</i></span>
+                    </h3>
+                  </div>
+                  <div>
+                    <p className='educ-dates'>
+                      <span>{study.dateTo ? `${study.dateFrom} - ` : study.dateFrom}</span>
+                      <span>{study.dateTo}</span>
+                    </p>
+                  </div>
+                </div>
+              )
+            }) }
+          </div>
+        </div>
+      )}
     </div>
   )
 }
