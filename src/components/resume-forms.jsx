@@ -3,6 +3,7 @@ import { PersonalInformation } from './personal-information.jsx';
 import { Education } from './educ.jsx';
 import { Skills } from './skills.jsx';
 import { Experience } from './exp.jsx';
+import { Projects } from './projects.jsx';
 
 export function ResumeForms ({ formData, setFormData }) {
   return (

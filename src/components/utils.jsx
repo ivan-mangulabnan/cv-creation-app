@@ -29,11 +29,22 @@ export function Heading ({title}) {
   </div>
 }
 
-export function LabelInput ({id, label, value, onChange}) {
+export function LabelInput ({id, inputType, label, value, onChange}) {
+  let inputEle;
+
+  switch (inputType) {
+    case 'textarea' :
+      inputEle = <textarea id={id} value={value} onChange={(e) =>  onChange(e.target.value)}></textarea>
+      break;
+    default:
+      inputEle = <input id={id} type={inputType ?? 'text'} value={value} onChange={(e) => onChange(e.target.value)}/>
+      break;
+  }
+
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <input id={id} type="text" value={value} onChange={(e) => onChange(e.target.value)}/>
+      { inputEle }
     </div>
   )
 }

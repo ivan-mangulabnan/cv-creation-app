@@ -38,12 +38,14 @@ function Tiles ({skill, updateForm, deleteSkill}) {
     setEditForm(prev => !prev);
   }
 
+  const skillID = `skill-${skill.id}`;
+
   if (editForm) {
     return (
       <div>
         <div>
-          <label htmlFor="">Skill</label>
-          <input type="text" value={skill.value ? skill.value : ''} onChange={(e) => updateForm(skill.id, e.target.value)}/>
+          <label htmlFor={skillID}>Skill</label>
+          <input id={skillID} type="text" value={skill.value ? skill.value : ''} onChange={(e) => updateForm(skill.id, e.target.value)}/>
         </div>
         <div>
           <button type="button" onClick={() => deleteSkill(skill.id)}>DELETE</button>
