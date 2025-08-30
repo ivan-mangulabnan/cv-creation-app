@@ -37,3 +37,13 @@
 .educ-dates {
   font-weight: 600;
 }
+
+hr {
+  border: 1.6px solid rgb(0, 0, 0);
+}
+
+.skill-ul > li {
+  list-style-position: inside;
+  list-style-type: disc;
+  font-weight: 700;
+}

@@ -7,6 +7,7 @@ export function ResumeDisplay ({formData}) {
       <div className='sheet'>
         <PersonalInfo personalInfo={formData.personalInfo}/>
         <Educ education={formData.education}/>
+        <Skills skills={formData.skills}/>
       </div>
     </div>
   )
@@ -44,7 +45,7 @@ function Educ ({education}) {
       { education.studies?.length > 0 && (
         <div>
           <h2>EDUCATION</h2>
-          <hr className='bg-color-black' />
+          <hr />
           <div>
             { education.studies.map(study => {
               return (
@@ -67,6 +68,22 @@ function Educ ({education}) {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+function Skills ({skills}) {
+  return (
+    <div>
+      { skills.length > 0 && (
+        <div>
+          <h2>SKILLS</h2>
+          <hr />
+          <ul className='skill-ul margin-top-2 grid grid-column-2'>
+            { skills.map(skill => <li className='padding-left-1' key={skill.id}>{skill.value}</li>) }
+          </ul>
+        </div>
+      ) }
     </div>
   )
 }

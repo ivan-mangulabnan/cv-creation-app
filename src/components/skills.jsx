@@ -9,6 +9,7 @@ export function Skills ({formData, setFormData}) {
       return {...prev, skills: [...prev.skills, {id: id, value: ''}]}
     })
   }
+  
   const updateForm = (id, newValue) => {
     setFormData(prev => ({...prev, skills: prev.skills.map(skill => {
       return skill.id === id ? {...skill, value: newValue} : skill;

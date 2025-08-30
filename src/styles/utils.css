@@ -2,8 +2,6 @@
 
 .gap-point-5 { gap: .5rem }
 
-hr { height: .3rem }
-
 .bg-color-black { background-color: rgb(0, 0, 0) }
 
 .margin-top-1 { margin-top: 1rem }
@@ -17,3 +15,9 @@ hr { height: .3rem }
 .flex-space-between { justify-content: space-between }
 
 .flex-align-center { align-items: center }
+
+.grid { display: grid }
+
+.grid-column-2 { grid-template-columns: 1fr 1fr }
+
+.padding-left-1 { padding-left: 1rem }
