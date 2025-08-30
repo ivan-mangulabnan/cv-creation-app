@@ -36,7 +36,7 @@ function ExpSection ({exp, updateExp, deleteExp}) {
     { id: 'company', label: 'Company', value: exp.company },
     { id: 'dateFrom', label: 'From', value: exp.dateFrom },
     { id: 'dateTo', label: 'To', value: exp.dateTo },
-    { id: 'desc', label: 'Description', value: exp.desc },
+    { id: 'desc', label: 'Description', value: exp.desc, inputType: 'textarea' }
   ];
 
   const curry = (id, field) => {
@@ -47,7 +47,7 @@ function ExpSection ({exp, updateExp, deleteExp}) {
 
   return (
     <div>
-      { categories.map(category => <LabelInput key={category.id} id={category.id} label={category.label} value={category.value ? category.value : ''} onChange={curry(exp.id, category.id)}/>) }
+      { categories.map(category => <LabelInput key={category.id} id={`${category.id}-${exp.id}`} inputType={category.inputType ? category.inputType : null} label={category.label} value={category.value ? category.value : ''} onChange={curry(exp.id, category.id)}/>) }
       <button type="button" onClick={() => deleteExp(exp.id)}>Remove Experience</button>
     </div>
   )
