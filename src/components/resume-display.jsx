@@ -9,6 +9,7 @@ export function ResumeDisplay ({formData}) {
         <Educ education={formData.education}/>
         <Skills skills={formData.skills}/>
         <Experience experience={formData.experience} />
+        <Projects projects={formData.projects} />
       </div>
     </div>
   )
@@ -24,7 +25,7 @@ function PersonalInfo ({personalInfo}) {
   return (
     <div>
       <h1>{personalInfo.fullname}</h1>
-      <p>{personalInfo.occupation}</p>
+      <p className='occupation'>{personalInfo.occupation}</p>
       <div className='contact-list'>
         { Object.entries(personalInfo.contact ?? {}).map(([key, value]) => {
           const Icon = svgs[key];
@@ -47,7 +48,7 @@ function Educ ({education}) {
         <div>
           <h2>EDUCATION</h2>
           <hr />
-          <div>
+          <div className='margin-top-2'>
             { education.studies.map(study => {
               return (
                 <div key={study.id} className='margin-top-1 flex flex-space-between flex-align-center'>
@@ -75,7 +76,7 @@ function Educ ({education}) {
 
 function Skills ({skills}) {
   return (
-    <div>
+    <div className='margin-top-2'>
       { skills.length > 0 && (
         <div>
           <h2>SKILLS</h2>
@@ -91,7 +92,7 @@ function Skills ({skills}) {
 
 function Experience ({experience}) {
   return (
-    <div>
+    <div className='margin-top-2'>
       { experience.length > 0 &&  (
         <div>
           <div>
@@ -101,16 +102,16 @@ function Experience ({experience}) {
           <ul>
             { experience.map(exp => {
               return (
-                <li key={exp.id} className='flex flex-space-between'>
+                <li key={exp.id} className='flex flex-space-between margin-top-2'>
                   <div>
                     <h3>
-                      {exp.company ? `${exp.position},` : exp.position}
-                      <span className={`span-company ${(exp.dateFrom || exp.dateTo) && 'display-block'}`}><i>{exp.company}</i></span>
+                      {exp.company ? `${exp.position}, ` : exp.position}
+                      <span className={`span-company ${(exp.dateFrom || exp.dateTo) && 'display-block'}`}><i className='bold-600'>{exp.company}</i></span>
                     </h3>
-                    <p className='pre-line word-limit-60ch'>{exp.desc}</p>
+                    <p className='pre-line word-limit-60ch margin-top-2'>{exp.desc}</p>
                   </div>
                   <div>
-                    <p className='exp-dates'>
+                    <p className='exp-dates padding-top-1'>
                       <span>{exp.dateFrom}</span>
                       <span>{exp.dateTo && ' - '}</span>
                       <span>{exp.dateTo}</span>
@@ -122,6 +123,31 @@ function Experience ({experience}) {
           </ul>
         </div>
       )}
+    </div>
+  )
+}
+
+function Projects ({projects}) {
+  return (
+    <div className='margin-top-2'>
+      { projects.length > 0 && (
+        <div>
+          <div>
+            <h2>PROJECTS</h2>
+            <hr />
+          </div>
+          <ul>
+            { projects.map(proj => {
+              return (
+                <li key={proj.id} className='margin-top-2'>
+                  <h3>{proj.title}</h3>
+                  <p className='pre-line word-limit-60ch margin-top-1'>{proj.desc}</p>
+                </li>
+              )
+            }) }
+          </ul>
+        </div>
+      ) }
     </div>
   )
 }

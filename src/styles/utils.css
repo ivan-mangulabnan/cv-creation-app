@@ -22,9 +22,13 @@
 
 .padding-left-1 { padding-left: 1rem }
 
+.padding-top-1 { padding-top: 1rem }
+
 .pre-line { white-space: pre-line }
 
 .word-limit-60ch { 
   max-width: 60ch;
   overflow-wrap: break-word;
 }
+
+.bold-600 { font-weight: 600 }
