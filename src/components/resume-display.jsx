@@ -8,6 +8,7 @@ export function ResumeDisplay ({formData}) {
         <PersonalInfo personalInfo={formData.personalInfo}/>
         <Educ education={formData.education}/>
         <Skills skills={formData.skills}/>
+        <Experience experience={formData.experience} />
       </div>
     </div>
   )
@@ -84,6 +85,43 @@ function Skills ({skills}) {
           </ul>
         </div>
       ) }
+    </div>
+  )
+}
+
+function Experience ({experience}) {
+  return (
+    <div>
+      { experience.length > 0 &&  (
+        <div>
+          <div>
+            <h2>EXPERIENCE</h2>
+            <hr />
+          </div>
+          <ul>
+            { experience.map(exp => {
+              return (
+                <li key={exp.id} className='flex flex-space-between'>
+                  <div>
+                    <h3>
+                      {exp.company ? `${exp.position},` : exp.position}
+                      <span className={`span-company ${(exp.dateFrom || exp.dateTo) && 'display-block'}`}><i>{exp.company}</i></span>
+                    </h3>
+                    <p className='pre-line word-limit-60ch'>{exp.desc}</p>
+                  </div>
+                  <div>
+                    <p className='exp-dates'>
+                      <span>{exp.dateFrom}</span>
+                      <span>{exp.dateTo && ' - '}</span>
+                      <span>{exp.dateTo}</span>
+                    </p>
+                  </div>
+                </li>
+              )
+            }) }
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

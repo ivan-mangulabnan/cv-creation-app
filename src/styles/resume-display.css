@@ -28,13 +28,15 @@
   max-width: 1.7rem;
 }
 
-.span-univ {
+.span-univ,
+.span-company {
   font-weight: 400;
   font-size: 1.6rem;
   width: 100%;
 }
 
-.educ-dates {
+.educ-dates,
+.exp-dates {
   font-weight: 600;
 }
 

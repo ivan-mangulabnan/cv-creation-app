@@ -21,3 +21,10 @@
 .grid-column-2 { grid-template-columns: 1fr 1fr }
 
 .padding-left-1 { padding-left: 1rem }
+
+.pre-line { white-space: pre-line }
+
+.word-limit-60ch { 
+  max-width: 60ch;
+  overflow-wrap: break-word;
+}
