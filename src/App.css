@@ -17,6 +17,7 @@ body {
   font-family: var(--default-font);
   min-height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .app {
