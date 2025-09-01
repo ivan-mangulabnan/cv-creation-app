@@ -29,6 +29,7 @@
 .flex-space-between { justify-content: space-between }
 .flex-end { justify-content: flex-end }
 .flex-align-center { align-items: center }
+.gap-2 { gap: 2rem }
 
 .grid { display: grid }
 
@@ -47,6 +48,7 @@
   max-width: 60ch;
   overflow-wrap: break-word;
 }
+.width-100 { width: 100% }
 
 .bold-600 { font-weight: 600 }
 

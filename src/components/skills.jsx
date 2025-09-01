@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Heading } from "./utils.jsx";
+import { CheckBTN, DelBTN, EditBTN, Heading, ShowBtnSVG } from "./utils.jsx";
 
-export function Skills ({formData, setFormData}) {
+export function Skills ({formData, setFormData, editing, updateEditing}) {
   const title = 'Skills';
   const addSkills = () => {
     const id = crypto.randomUUID();
@@ -19,16 +19,24 @@ export function Skills ({formData, setFormData}) {
   const deleteSkill = (id) => {
     setFormData(prev => ({...prev, skills: prev.skills.filter(skill => skill.id !== id)}))
   }
-
   return (
-    <div>
-      <Heading title={title}/>
-      <div>
-        { formData.skills.map(skill => <Tiles key={skill.id} skill={skill} updateForm={updateForm} deleteSkill={deleteSkill}/>) }
+    <div className="margin-top-1">
+      <div className="flex flex-space-between bg-white padding-x1-y05 bor-rad-1">
+        <Heading title={title}/>
+        <button className="edit-btn show-btn" type='button' onClick={updateEditing}>
+          <ShowBtnSVG isShowing={editing}/>
+        </button>
       </div>
-      <div>
-        <button type="button" onClick={addSkills}>Add Skill</button>
-      </div>
+      { editing && (
+        <div className="margin-top-1 bg-slight-purple pad-xy-1 bor-rad-1">
+          <div className="flex pad-xy-1 flex-wrap gap-2">
+            { formData.skills.map(skill => <Tiles key={skill.id} skill={skill} updateForm={updateForm} deleteSkill={deleteSkill}/>) }
+          </div>
+          <div className="margin-top-1">
+            <button className="add-comp-btn" type="button" onClick={addSkills}>Add Skill</button>
+          </div>
+        </div>
+      ) }
     </div>
   )
 }
@@ -43,14 +51,14 @@ function Tiles ({skill, updateForm, deleteSkill}) {
 
   if (editForm) {
     return (
-      <div>
+      <div className="flex flex-space-between width-100">
         <div>
-          <label htmlFor={skillID}>Skill</label>
-          <input id={skillID} type="text" value={skill.value ? skill.value : ''} onChange={(e) => updateForm(skill.id, e.target.value)}/>
+          <label className="skill-label" htmlFor={skillID}>SKILL</label>
+          <input className="skill-input" id={skillID} type="text" value={skill.value ? skill.value : ''} onChange={(e) => updateForm(skill.id, e.target.value)}/>
         </div>
-        <div>
-          <button type="button" onClick={() => deleteSkill(skill.id)}>DELETE</button>
-          <button type="button" onClick={edit}>DONE</button>
+        <div className="flex">
+          <DelBTN onClick={() => deleteSkill(skill.id)}/>
+          <CheckBTN onClick={edit}/>
         </div>
       </div>
     )
@@ -58,7 +66,7 @@ function Tiles ({skill, updateForm, deleteSkill}) {
 
   return (
     <div>
-      <button onClick={edit}>{skill.value ? skill.value : 'Default'}</button>
+      <button className="skill-btn" onClick={edit}>{skill.value ? skill.value : 'Default'}</button>
     </div>
   )
 }
