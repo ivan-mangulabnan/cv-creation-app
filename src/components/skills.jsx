@@ -28,7 +28,7 @@ export function Skills ({formData, setFormData, editing, updateEditing}) {
         </button>
       </div>
       { editing && (
-        <div className="margin-top-1 bg-slight-purple pad-xy-1 bor-rad-1">
+        <div className="margin-top-1 bor-rad-1">
           <div className="flex pad-xy-1 flex-wrap gap-2">
             { formData.skills.map(skill => <Tiles key={skill.id} skill={skill} updateForm={updateForm} deleteSkill={deleteSkill}/>) }
           </div>
@@ -66,7 +66,7 @@ function Tiles ({skill, updateForm, deleteSkill}) {
 
   return (
     <div>
-      <button className="skill-btn" onClick={edit}>{skill.value ? skill.value : 'Default'}</button>
+      <button className="skill-btn" onClick={edit}>{skill.value ? skill.value : 'Click me'}</button>
     </div>
   )
 }

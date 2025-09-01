@@ -34,7 +34,7 @@ export function LabelInput ({id, inputType, label, value, onChange}) {
 
   switch (inputType) {
     case 'textarea' :
-      inputEle = <textarea id={id} value={value} onChange={(e) =>  onChange(e.target.value)}></textarea>
+      inputEle = <textarea className="form-area" id={id} value={value} onChange={(e) =>  onChange(e.target.value)}></textarea>
       break;
     default:
       inputEle = <input className="form-input" id={id} type={inputType ?? 'text'} value={value} onChange={(e) => onChange(e.target.value)}/>

@@ -115,14 +115,16 @@
 }
 
 .p-input,
-.form-input {
+.form-input,
+.form-area {
   border-radius: 1rem;
   padding: 0.25rem 1rem;
   border: 1px solid #ccc;
 }
 
 .p-input:focus,
-.form-input:focus {
+.form-input:focus,
+.form-area:focus {
   outline: none;
   background-color: #f6f0fc;
 }

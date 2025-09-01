@@ -83,7 +83,10 @@ function StudySection ({study, updateForm, deleteStudy, isOpen, setIsOpen}) {
   return (
     <div className="flex flex-space-between bg-slight-purple pad-xy-1 margin-top-1 bor-rad-1">
       <h4>{study.fos ? study.fos : 'Set Study'}</h4>
-      <EditBTN onClick={setIsOpen}/>
+      <div className="flex">
+        <EditBTN onClick={setIsOpen}/>
+        <DelBTN onClick={() => deleteStudy(study.id)} />
+      </div>
     </div>
   )
 }

@@ -30,6 +30,7 @@
 .flex-end { justify-content: flex-end }
 .flex-align-center { align-items: center }
 .gap-2 { gap: 2rem }
+.gap-1 { gap: 1rem }
 
 .grid { display: grid }
 
