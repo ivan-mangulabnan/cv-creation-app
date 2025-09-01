@@ -15,19 +15,19 @@
 .bor-bot-left-rad-1 { border-bottom-left-radius: 1rem }
 .bor-bot-right-rad-1 { border-bottom-right-radius: 1rem }
 .bor-none { border: none }
+.border-2px-grey { border: 2px solid rgb(204, 204, 204)}
 
 .margin-top-1 { margin-top: 1rem }
 .margin-top-2 { margin-top: 2rem }
 .margin-left-auto { margin-left: auto }
+.margin-0 { margin: 0 }
 
 .display-block { display: block }
 
 .flex-wrap { flex-wrap: wrap }
-
 .flex-dir-col { flex-direction: column }
-
 .flex-space-between { justify-content: space-between }
-
+.flex-end { justify-content: flex-end }
 .flex-align-center { align-items: center }
 
 .grid { display: grid }
@@ -55,3 +55,13 @@
 }
 
 .bor-rad-1 { border-radius: 1rem }
+
+.show-svg {
+  width: 100%;
+  max-width: 2rem;
+  transition: transform 0.2s ease-out;
+}
+
+.show-svg.active {
+  transform: rotate(180deg);
+}
