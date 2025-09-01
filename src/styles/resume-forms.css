@@ -45,3 +45,71 @@
   background-color: var(--color-bluish-white);
   padding: .3rem 0 .3rem 1rem;
 }
+
+.form-svg {
+  max-width: 2rem;
+}
+
+.edit-btn,
+.check-btn {
+  border: none;
+  background: transparent;
+}
+
+.edit-btn-svg {
+  width: 100%;
+  max-width: 2rem;
+}
+
+.check-svg {
+  width: 100%;
+  max-width: 2rem;
+  stroke-width: 4;
+  stroke: rgb(0, 128, 0);
+}
+
+.check-btn {
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+}
+
+.check-btn:hover,
+.check-btn:focus {
+  background-color: rgb(204, 204, 204, 0.3);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+
+.check-btn:hover .check-svg,
+.check-btn:focus .check-svg {
+  stroke: rgb(0, 190, 0);
+}
+
+.fn-display {
+  font-weight: 700;
+}
+
+.occ-display {
+  font-weight: 600;
+}
+
+.p-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  padding-left: .3rem;
+  margin-top: .5rem;
+}
+
+.p-input {
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  border: 1px solid #ccc;
+}
+
+.p-input:focus {
+  outline: none;
+  background-color: #f6f0fc;
+}

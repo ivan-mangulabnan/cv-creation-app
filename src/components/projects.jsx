@@ -1,6 +1,6 @@
 import { Heading, LabelInput } from "./utils.jsx";
 
-export function Projects ({formData, setFormData}) {
+export function Projects ({formData, setFormData, editing, updateEditing}) {
   const title = 'Projects';
   const addProject = () => {
     const id = crypto.randomUUID();
