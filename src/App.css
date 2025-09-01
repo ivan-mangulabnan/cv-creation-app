@@ -34,3 +34,29 @@ ul {
 button {
   cursor: pointer;
 }
+
+.header {
+  background-color: rgb(255, 255, 255);
+  min-height: 6rem;
+  margin-bottom: 2rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 3px 3px 5px #ccc;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.logo-p {
+  font-size: 3rem;
+}
+
+.logo-wrapper {
+  max-width: 3rem;
+}
+
+.logo-svg {
+  width: 100%;
+  fill: yellow;
+}
